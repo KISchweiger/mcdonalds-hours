@@ -1,0 +1,35 @@
+name: Update Opening Hours
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # täglich 05:00 UTC = 06:00 / 07:00 MEZ/MESZ
+  workflow_dispatch:        # manueller Start jederzeit möglich
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch opening hours & generate HTML
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: node fetch-and-generate.js
+        working-directory: scripts
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          commit_message: 'chore: update opening hours ${{ github.run_id }}'
