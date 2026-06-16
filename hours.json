@@ -1,0 +1,77 @@
+{
+  "updated_at": "16.06.2026, 11:15",
+  "locations": [
+    {
+      "key": "lohmuehle_luebeck",
+      "name": "Lübeck – Lohmühle",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "kirschkaten_luebeck",
+      "name": "Lübeck – Kirschkaten",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "oldenburg_holstein",
+      "name": "Oldenburg in Holstein",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "neustadt",
+      "name": "Neustadt in Holstein",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "eutin",
+      "name": "Eutin",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "fehmarn",
+      "name": "Fehmarn",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "bahnhof_luebeck",
+      "name": "Lübeck – Bahnhof",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    },
+    {
+      "key": "ziegelstrasse_luebeck",
+      "name": "Lübeck – Ziegelstraße",
+      "address": "–",
+      "phone": "–",
+      "status": "ERROR",
+      "open_now": null,
+      "weekday_hours": []
+    }
+  ]
+}
