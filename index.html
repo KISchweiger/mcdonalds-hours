@@ -6,231 +6,204 @@
   <title>McDonald's Öffnungszeiten – Lübeck-Region</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f5f5f3;
-      color: #1a1a18;
-      padding: 2rem 1rem;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    header {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-    header h1 {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-    .meta {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .grid {
-      max-width: 800px;
-      margin: 0 auto;
-      display: grid;
-      gap: 12px;
-    }
-
-    .card {
-      background: #fff;
-      border: 0.5px solid rgba(0,0,0,0.12);
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      gap: 12px;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a18; padding: 2rem 1rem; font-size: 15px; line-height: 1.5; }
+    header { max-width: 800px; margin: 0 auto 2rem; }
+    header h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+    .meta { font-size: 12px; color: #888; }
+    .grid { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; }
+    .card { background: #fff; border: 0.5px solid rgba(0,0,0,0.12); border-radius: 12px; padding: 1rem 1.25rem; }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
     .loc-name { font-size: 15px; font-weight: 500; }
     .loc-addr { font-size: 12px; color: #666; margin-top: 2px; }
     .loc-phone { font-size: 12px; color: #666; margin-top: 2px; }
-
-    .badge {
-      font-size: 11px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+    .badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
     .badge-open   { background: #eaf3de; color: #3b6d11; }
     .badge-closed { background: #faeeda; color: #854f0b; }
     .badge-error  { background: #fcebeb; color: #a32d2d; }
-
-    .hours-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    .hours-table td {
-      padding: 3px 0;
-      vertical-align: top;
-    }
-    .hours-table .day {
-      width: 110px;
-      color: #666;
-    }
+    .hours-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .hours-table td { padding: 3px 0; vertical-align: top; }
+    .hours-table .day { width: 110px; color: #666; }
     .hours-table .time { color: #1a1a18; }
     .no-data { color: #aaa; font-style: italic; }
-    .error-msg {
-      margin-top: 8px;
-      font-size: 12px;
-      color: #a32d2d;
-      background: #fcebeb;
-      padding: 6px 10px;
-      border-radius: 6px;
-    }
-
-    footer {
-      max-width: 800px;
-      margin: 2rem auto 0;
-      font-size: 12px;
-      color: #aaa;
-      text-align: center;
-    }
+    .error-msg { margin-top: 8px; font-size: 12px; color: #a32d2d; background: #fcebeb; padding: 6px 10px; border-radius: 6px; }
+    footer { max-width: 800px; margin: 2rem auto 0; font-size: 12px; color: #aaa; text-align: center; }
   </style>
 </head>
 <body>
   <header>
     <h1>McDonald's Öffnungszeiten – Lübeck-Region</h1>
-    <div class="meta">Zuletzt aktualisiert: 16.06.2026, 11:28 · Quelle: Google Places API · 8 Standorte</div>
+    <div class="meta">Zuletzt aktualisiert: 16.06.2026, 11:45 · Quelle: Google Places API · 8 Standorte</div>
   </header>
-
   <main class="grid">
     
     <div class="card" data-key="lohmuehle_luebeck">
       <div class="card-header">
         <div>
           <div class="loc-name">Lübeck – Lohmühle</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">b. d. Lohmühle 21B, 23554 Lübeck-St. Lorenz Nord, Deutschland</div>
+          <div class="loc-phone">📞 +49 451 4082365</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">24 Stunden geöffnet</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">24 Stunden geöffnet</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">24 Stunden geöffnet</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">24 Stunden geöffnet</td></tr>
+<tr><td class="day">Freitag</td><td class="time">24 Stunden geöffnet</td></tr>
+<tr><td class="day">Samstag</td><td class="time">24 Stunden geöffnet</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">24 Stunden geöffnet</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJVVTunQcMskcR0TA7-6s_q48</div>
+      
     </div>
 
     <div class="card" data-key="kirschkaten_luebeck">
       <div class="card-header">
         <div>
           <div class="loc-name">Lübeck – Kirschkaten</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Hinter den Kirschkaten 2, 23560 Lübeck-St. Jürgen, Deutschland</div>
+          <div class="loc-phone">📞 +49 451 2907306</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">08:00–02:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">08:00–02:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">09:00–01:00 Uhr</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJXwAFPTcJskcRJ_2M3HAenlI</div>
+      
     </div>
 
     <div class="card" data-key="oldenburg_holstein">
       <div class="card-header">
         <div>
           <div class="loc-name">Oldenburg in Holstein</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Dannauer Bruch 1, 23758 Oldenburg in Holstein-Oldenburg, Deutschland</div>
+          <div class="loc-phone">📞 +49 4361 6239942</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">08:00–00:00 Uhr</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJKTC7-i9-skcROXp5enfoeEg</div>
+      
     </div>
 
     <div class="card" data-key="neustadt">
       <div class="card-header">
         <div>
           <div class="loc-name">Neustadt in Holstein</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Eutiner Str. 57-59, 23730 Neustadt, Deutschland</div>
+          <div class="loc-phone">📞 +49 4561 16166</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">09:00–00:00 Uhr</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJ-2AzcxV3skcRb4OTX_G2j5E</div>
+      
     </div>
 
     <div class="card" data-key="eutin">
       <div class="card-header">
         <div>
           <div class="loc-name">Eutin</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Röntgenstraße 2, 23701 Eutin, Deutschland</div>
+          <div class="loc-phone">📞 +49 4521 401899</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">08:00–01:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">09:00–00:00 Uhr</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJdU8qK-RvskcReDqMTFaZ1r0</div>
+      
     </div>
 
     <div class="card" data-key="fehmarn">
       <div class="card-header">
         <div>
           <div class="loc-name">Fehmarn</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Mummendorfer Weg 5, 23769 Fehmarn, Deutschland</div>
+          <div class="loc-phone">📞 +49 4371 5515</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">09:00–00:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">09:00–00:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">09:00–00:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">09:00–00:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">09:00–00:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">09:00–00:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">09:00–00:00 Uhr</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJBza-PUt7rUcRADPR2G3jAa0</div>
+      
     </div>
 
     <div class="card" data-key="bahnhof_luebeck">
       <div class="card-header">
         <div>
           <div class="loc-name">Lübeck – Bahnhof</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Am Bahnhof 2, 23558 Lübeck-St. Lorenz Süd, Deutschland</div>
+          <div class="loc-phone">📞 +49 451 2035279</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">08:00–23:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">08:00–23:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">08:00–23:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">08:00–23:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">08:00–00:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">08:00–23:00 Uhr</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJEVNqo1QJskcR4H0wkQWEhFw</div>
+      
     </div>
 
     <div class="card" data-key="ziegelstrasse_luebeck">
       <div class="card-header">
         <div>
           <div class="loc-name">Lübeck – Ziegelstraße</div>
-          <div class="loc-addr">–</div>
-          <div class="loc-phone">📞 –</div>
+          <div class="loc-addr">Ziegelstraße 232, 23556 Lübeck-Buntekuh, Deutschland</div>
+          <div class="loc-phone">📞 +49 451 8131633</div>
         </div>
-        <div><span class="badge badge-error">Fehler</span></div>
+        <div><span class="badge badge-open">Jetzt geöffnet</span></div>
       </div>
       <table class="hours-table">
-        <tbody><tr><td colspan="2" class="no-data">Keine Daten verfügbar</td></tr></tbody>
+        <tbody><tr><td class="day">Montag</td><td class="time">10:30–20:00 Uhr</td></tr>
+<tr><td class="day">Dienstag</td><td class="time">10:30–20:00 Uhr</td></tr>
+<tr><td class="day">Mittwoch</td><td class="time">10:30–20:00 Uhr</td></tr>
+<tr><td class="day">Donnerstag</td><td class="time">10:30–20:00 Uhr</td></tr>
+<tr><td class="day">Freitag</td><td class="time">10:30–20:00 Uhr</td></tr>
+<tr><td class="day">Samstag</td><td class="time">10:30–20:00 Uhr</td></tr>
+<tr><td class="day">Sonntag</td><td class="time">Geschlossen</td></tr></tbody>
       </table>
-      <div class="error-msg">⚠ Places API Status: REQUEST_DENIED für ChIJ-ekKoL8OskcRM1uwP8gPEVk</div>
+      
     </div>
   </main>
-
-  <footer>
-    Daten werden täglich automatisch aktualisiert.
-  </footer>
+  <footer>Daten werden täglich automatisch aktualisiert.</footer>
 </body>
 </html>

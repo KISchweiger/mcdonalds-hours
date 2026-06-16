@@ -1,77 +1,141 @@
 {
-  "updated_at": "16.06.2026, 11:28",
+  "updated_at": "16.06.2026, 11:45",
   "locations": [
     {
       "key": "lohmuehle_luebeck",
       "name": "Lübeck – Lohmühle",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "b. d. Lohmühle 21B, 23554 Lübeck-St. Lorenz Nord, Deutschland",
+      "phone": "+49 451 4082365",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 24 Stunden geöffnet",
+        "Dienstag: 24 Stunden geöffnet",
+        "Mittwoch: 24 Stunden geöffnet",
+        "Donnerstag: 24 Stunden geöffnet",
+        "Freitag: 24 Stunden geöffnet",
+        "Samstag: 24 Stunden geöffnet",
+        "Sonntag: 24 Stunden geöffnet"
+      ]
     },
     {
       "key": "kirschkaten_luebeck",
       "name": "Lübeck – Kirschkaten",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Hinter den Kirschkaten 2, 23560 Lübeck-St. Jürgen, Deutschland",
+      "phone": "+49 451 2907306",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 08:00–01:00 Uhr",
+        "Dienstag: 08:00–01:00 Uhr",
+        "Mittwoch: 08:00–01:00 Uhr",
+        "Donnerstag: 08:00–01:00 Uhr",
+        "Freitag: 08:00–02:00 Uhr",
+        "Samstag: 08:00–02:00 Uhr",
+        "Sonntag: 09:00–01:00 Uhr"
+      ]
     },
     {
       "key": "oldenburg_holstein",
       "name": "Oldenburg in Holstein",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Dannauer Bruch 1, 23758 Oldenburg in Holstein-Oldenburg, Deutschland",
+      "phone": "+49 4361 6239942",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 08:00–00:00 Uhr",
+        "Dienstag: 08:00–00:00 Uhr",
+        "Mittwoch: 08:00–00:00 Uhr",
+        "Donnerstag: 08:00–00:00 Uhr",
+        "Freitag: 08:00–01:00 Uhr",
+        "Samstag: 08:00–01:00 Uhr",
+        "Sonntag: 08:00–00:00 Uhr"
+      ]
     },
     {
       "key": "neustadt",
       "name": "Neustadt in Holstein",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Eutiner Str. 57-59, 23730 Neustadt, Deutschland",
+      "phone": "+49 4561 16166",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 08:00–00:00 Uhr",
+        "Dienstag: 08:00–00:00 Uhr",
+        "Mittwoch: 08:00–00:00 Uhr",
+        "Donnerstag: 08:00–00:00 Uhr",
+        "Freitag: 08:00–01:00 Uhr",
+        "Samstag: 08:00–01:00 Uhr",
+        "Sonntag: 09:00–00:00 Uhr"
+      ]
     },
     {
       "key": "eutin",
       "name": "Eutin",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Röntgenstraße 2, 23701 Eutin, Deutschland",
+      "phone": "+49 4521 401899",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 08:00–00:00 Uhr",
+        "Dienstag: 08:00–00:00 Uhr",
+        "Mittwoch: 08:00–00:00 Uhr",
+        "Donnerstag: 08:00–00:00 Uhr",
+        "Freitag: 08:00–01:00 Uhr",
+        "Samstag: 08:00–01:00 Uhr",
+        "Sonntag: 09:00–00:00 Uhr"
+      ]
     },
     {
       "key": "fehmarn",
       "name": "Fehmarn",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Mummendorfer Weg 5, 23769 Fehmarn, Deutschland",
+      "phone": "+49 4371 5515",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 09:00–00:00 Uhr",
+        "Dienstag: 09:00–00:00 Uhr",
+        "Mittwoch: 09:00–00:00 Uhr",
+        "Donnerstag: 09:00–00:00 Uhr",
+        "Freitag: 09:00–00:00 Uhr",
+        "Samstag: 09:00–00:00 Uhr",
+        "Sonntag: 09:00–00:00 Uhr"
+      ]
     },
     {
       "key": "bahnhof_luebeck",
       "name": "Lübeck – Bahnhof",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Am Bahnhof 2, 23558 Lübeck-St. Lorenz Süd, Deutschland",
+      "phone": "+49 451 2035279",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 08:00–23:00 Uhr",
+        "Dienstag: 08:00–23:00 Uhr",
+        "Mittwoch: 08:00–23:00 Uhr",
+        "Donnerstag: 08:00–23:00 Uhr",
+        "Freitag: 08:00–00:00 Uhr",
+        "Samstag: 08:00–00:00 Uhr",
+        "Sonntag: 08:00–23:00 Uhr"
+      ]
     },
     {
       "key": "ziegelstrasse_luebeck",
       "name": "Lübeck – Ziegelstraße",
-      "address": "–",
-      "phone": "–",
-      "status": "ERROR",
-      "open_now": null,
-      "weekday_hours": []
+      "address": "Ziegelstraße 232, 23556 Lübeck-Buntekuh, Deutschland",
+      "phone": "+49 451 8131633",
+      "status": "OPERATIONAL",
+      "open_now": true,
+      "weekday_hours": [
+        "Montag: 10:30–20:00 Uhr",
+        "Dienstag: 10:30–20:00 Uhr",
+        "Mittwoch: 10:30–20:00 Uhr",
+        "Donnerstag: 10:30–20:00 Uhr",
+        "Freitag: 10:30–20:00 Uhr",
+        "Samstag: 10:30–20:00 Uhr",
+        "Sonntag: Geschlossen"
+      ]
     }
   ]
 }
