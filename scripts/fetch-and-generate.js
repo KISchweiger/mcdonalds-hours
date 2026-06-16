@@ -1,5 +1,5 @@
 // fetch-and-generate.js
-// Ruft für alle 8 McDonald's-Standorte die Öffnungszeiten via Google Places API ab
+// Ruft für alle 8 McDonald's-Standorte die Öffnungszeiten via Google Places API (New) ab
 // und schreibt eine HTML-Datei nach ../docs/index.html
 
 import fs from 'fs';
@@ -17,38 +17,36 @@ if (!API_KEY) {
 }
 
 const LOCATIONS = [
-  { key: 'lohmuehle_luebeck',    name: 'Lübeck – Lohmühle',       placeId: 'ChIJVVTunQcMskcR0TA7-6s_q48' },
-  { key: 'kirschkaten_luebeck',  name: 'Lübeck – Kirschkaten',    placeId: 'ChIJXwAFPTcJskcRJ_2M3HAenlI' },
-  { key: 'oldenburg_holstein',   name: 'Oldenburg in Holstein',   placeId: 'ChIJKTC7-i9-skcROXp5enfoeEg' },
-  { key: 'neustadt',             name: 'Neustadt in Holstein',    placeId: 'ChIJ-2AzcxV3skcRb4OTX_G2j5E' },
-  { key: 'eutin',                name: 'Eutin',                   placeId: 'ChIJdU8qK-RvskcReDqMTFaZ1r0' },
-  { key: 'fehmarn',              name: 'Fehmarn',                 placeId: 'ChIJBza-PUt7rUcRADPR2G3jAa0' },
-  { key: 'bahnhof_luebeck',     name: 'Lübeck – Bahnhof',        placeId: 'ChIJEVNqo1QJskcR4H0wkQWEhFw' },
-  { key: 'ziegelstrasse_luebeck',name: 'Lübeck – Ziegelstraße',  placeId: 'ChIJ-ekKoL8OskcRM1uwP8gPEVk' },
+  { key: 'lohmuehle_luebeck',     name: 'Lübeck – Lohmühle',      placeId: 'ChIJVVTunQcMskcR0TA7-6s_q48' },
+  { key: 'kirschkaten_luebeck',   name: 'Lübeck – Kirschkaten',   placeId: 'ChIJXwAFPTcJskcRJ_2M3HAenlI' },
+  { key: 'oldenburg_holstein',    name: 'Oldenburg in Holstein',  placeId: 'ChIJKTC7-i9-skcROXp5enfoeEg' },
+  { key: 'neustadt',              name: 'Neustadt in Holstein',   placeId: 'ChIJ-2AzcxV3skcRb4OTX_G2j5E' },
+  { key: 'eutin',                 name: 'Eutin',                  placeId: 'ChIJdU8qK-RvskcReDqMTFaZ1r0' },
+  { key: 'fehmarn',               name: 'Fehmarn',                placeId: 'ChIJBza-PUt7rUcRADPR2G3jAa0' },
+  { key: 'bahnhof_luebeck',      name: 'Lübeck – Bahnhof',       placeId: 'ChIJEVNqo1QJskcR4H0wkQWEhFw' },
+  { key: 'ziegelstrasse_luebeck', name: 'Lübeck – Ziegelstraße', placeId: 'ChIJ-ekKoL8OskcRM1uwP8gPEVk' },
 ];
 
-// Wochentage auf Deutsch (Google liefert englisch)
-const DAY_MAP = {
-  Monday: 'Montag', Tuesday: 'Dienstag', Wednesday: 'Mittwoch',
-  Thursday: 'Donnerstag', Friday: 'Freitag', Saturday: 'Samstag', Sunday: 'Sonntag'
-};
-
-// ─── API-Abruf ────────────────────────────────────────────────────────────────
+// ─── API-Abruf (Places API New) ──────────────────────────────────────────────
 
 async function fetchPlaceDetails(placeId) {
-  const url = new URL('https://maps.googleapis.com/maps/api/place/details/json');
-  url.searchParams.set('place_id', placeId);
-  url.searchParams.set('fields', 'name,formatted_address,formatted_phone_number,opening_hours,business_status');
-  url.searchParams.set('language', 'de');
-  url.searchParams.set('key', API_KEY);
+  const url = `https://places.googleapis.com/v1/places/${placeId}`;
 
-  const res = await fetch(url.toString());
-  if (!res.ok) throw new Error(`HTTP ${res.status} für Place ID ${placeId}`);
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'X-Goog-Api-Key': API_KEY,
+      'X-Goog-FieldMask': 'displayName,formattedAddress,internationalPhoneNumber,regularOpeningHours,businessStatus',
+      'Accept-Language': 'de',
+    }
+  });
 
-  const data = await res.json();
-  if (data.status !== 'OK') throw new Error(`Places API Status: ${data.status} für ${placeId}`);
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`HTTP ${res.status}: ${errText}`);
+  }
 
-  return data.result;
+  return await res.json();
 }
 
 async function fetchAllLocations() {
@@ -56,17 +54,22 @@ async function fetchAllLocations() {
   for (const loc of LOCATIONS) {
     try {
       console.log(`Abruf: ${loc.name} …`);
-      const details = await fetchPlaceDetails(loc.placeId);
+      const d = await fetchPlaceDetails(loc.placeId);
+
+      // Öffnungszeiten aus weekdayDescriptions (neue API)
+      const weekdayText = d.regularOpeningHours?.weekdayDescriptions ?? [];
+      const openNow = d.regularOpeningHours?.openNow ?? null;
+
       results.push({
         key: loc.key,
         name: loc.name,
-        address: details.formatted_address ?? '–',
-        phone: details.formatted_phone_number ?? '–',
-        status: details.business_status ?? 'UNKNOWN',
-        weekdayText: details.opening_hours?.weekday_text ?? [],
-        openNow: details.opening_hours?.open_now ?? null,
+        address: d.formattedAddress ?? '–',
+        phone: d.internationalPhoneNumber ?? '–',
+        status: d.businessStatus ?? 'UNKNOWN',
+        weekdayText,
+        openNow,
       });
-      // Kurze Pause zwischen Requests (Rate Limiting)
+
       await new Promise(r => setTimeout(r, 300));
     } catch (err) {
       console.error(`Fehler bei ${loc.name}: ${err.message}`);
@@ -104,9 +107,8 @@ function buildHtml(locations, updatedAt) {
 
     const hoursRows = loc.weekdayText.length > 0
       ? loc.weekdayText.map(line => {
-          // "Montag: 08:00–00:00" → zwei Spalten
           const colonIdx = line.indexOf(':');
-          const day = colonIdx > -1 ? line.slice(0, colonIdx) : line;
+          const day  = colonIdx > -1 ? line.slice(0, colonIdx) : line;
           const time = colonIdx > -1 ? line.slice(colonIdx + 1).trim() : '';
           return `<tr><td class="day">${day}</td><td class="time">${time}</td></tr>`;
         }).join('\n')
@@ -137,98 +139,27 @@ function buildHtml(locations, updatedAt) {
   <title>McDonald's Öffnungszeiten – Lübeck-Region</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f5f5f3;
-      color: #1a1a18;
-      padding: 2rem 1rem;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    header {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-    header h1 {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-    .meta {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .grid {
-      max-width: 800px;
-      margin: 0 auto;
-      display: grid;
-      gap: 12px;
-    }
-
-    .card {
-      background: #fff;
-      border: 0.5px solid rgba(0,0,0,0.12);
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      gap: 12px;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a18; padding: 2rem 1rem; font-size: 15px; line-height: 1.5; }
+    header { max-width: 800px; margin: 0 auto 2rem; }
+    header h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+    .meta { font-size: 12px; color: #888; }
+    .grid { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; }
+    .card { background: #fff; border: 0.5px solid rgba(0,0,0,0.12); border-radius: 12px; padding: 1rem 1.25rem; }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
     .loc-name { font-size: 15px; font-weight: 500; }
     .loc-addr { font-size: 12px; color: #666; margin-top: 2px; }
     .loc-phone { font-size: 12px; color: #666; margin-top: 2px; }
-
-    .badge {
-      font-size: 11px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+    .badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
     .badge-open   { background: #eaf3de; color: #3b6d11; }
     .badge-closed { background: #faeeda; color: #854f0b; }
     .badge-error  { background: #fcebeb; color: #a32d2d; }
-
-    .hours-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    .hours-table td {
-      padding: 3px 0;
-      vertical-align: top;
-    }
-    .hours-table .day {
-      width: 110px;
-      color: #666;
-    }
+    .hours-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .hours-table td { padding: 3px 0; vertical-align: top; }
+    .hours-table .day { width: 110px; color: #666; }
     .hours-table .time { color: #1a1a18; }
     .no-data { color: #aaa; font-style: italic; }
-    .error-msg {
-      margin-top: 8px;
-      font-size: 12px;
-      color: #a32d2d;
-      background: #fcebeb;
-      padding: 6px 10px;
-      border-radius: 6px;
-    }
-
-    footer {
-      max-width: 800px;
-      margin: 2rem auto 0;
-      font-size: 12px;
-      color: #aaa;
-      text-align: center;
-    }
+    .error-msg { margin-top: 8px; font-size: 12px; color: #a32d2d; background: #fcebeb; padding: 6px 10px; border-radius: 6px; }
+    footer { max-width: 800px; margin: 2rem auto 0; font-size: 12px; color: #aaa; text-align: center; }
   </style>
 </head>
 <body>
@@ -236,19 +167,15 @@ function buildHtml(locations, updatedAt) {
     <h1>McDonald's Öffnungszeiten – Lübeck-Region</h1>
     <div class="meta">Zuletzt aktualisiert: ${updatedAt} · Quelle: Google Places API · 8 Standorte</div>
   </header>
-
   <main class="grid">
     ${cards}
   </main>
-
-  <footer>
-    Daten werden täglich automatisch aktualisiert.
-  </footer>
+  <footer>Daten werden täglich automatisch aktualisiert.</footer>
 </body>
 </html>`;
 }
 
-// ─── JSON-Export (für fonio / n8n) ───────────────────────────────────────────
+// ─── JSON-Export ──────────────────────────────────────────────────────────────
 
 function buildJson(locations, updatedAt) {
   return JSON.stringify({
@@ -277,18 +204,13 @@ function buildJson(locations, updatedAt) {
   console.log('Starte Abruf der Öffnungszeiten …');
   const locations = await fetchAllLocations();
 
-  // Ausgabeordner anlegen
   const docsDir = path.join(__dirname, '..', 'docs');
   if (!fs.existsSync(docsDir)) fs.mkdirSync(docsDir, { recursive: true });
 
-  // HTML schreiben
-  const html = buildHtml(locations, updatedAt);
-  fs.writeFileSync(path.join(docsDir, 'index.html'), html, 'utf8');
+  fs.writeFileSync(path.join(docsDir, 'index.html'), buildHtml(locations, updatedAt), 'utf8');
   console.log('✓ docs/index.html geschrieben');
 
-  // JSON schreiben (für fonio-Webhook oder n8n HTTP-Node)
-  const json = buildJson(locations, updatedAt);
-  fs.writeFileSync(path.join(docsDir, 'hours.json'), json, 'utf8');
+  fs.writeFileSync(path.join(docsDir, 'hours.json'), buildJson(locations, updatedAt), 'utf8');
   console.log('✓ docs/hours.json geschrieben');
 
   console.log(`\nFertig – ${locations.length} Standorte verarbeitet (${updatedAt})`);
