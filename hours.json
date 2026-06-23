@@ -1,5 +1,5 @@
 {
-  "updated_at": "22.06.2026, 20:54",
+  "updated_at": "23.06.2026, 16:04",
   "locations": [
     {
       "key": "lohmuehle_luebeck",
@@ -126,7 +126,7 @@
       "address": "Ziegelstraße 232, 23556 Lübeck-Buntekuh, Deutschland",
       "phone": "+49 451 8131633",
       "status": "OPERATIONAL",
-      "open_now": false,
+      "open_now": true,
       "weekday_hours": [
         "Montag: 10:30–20:00 Uhr",
         "Dienstag: 10:30–20:00 Uhr",
