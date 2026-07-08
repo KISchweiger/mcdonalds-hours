@@ -1,5 +1,5 @@
 {
-  "updated_at": "07.07.2026, 15:26",
+  "updated_at": "08.07.2026, 13:31",
   "locations": [
     {
       "key": "lohmuehle_luebeck",
@@ -60,8 +60,8 @@
       "status": "OPERATIONAL",
       "open_now": true,
       "weekday_hours": [
-        "Montag: 08:00–00:00 Uhr",
-        "Dienstag: 08:00–00:00 Uhr",
+        "Montag: 08:00–01:00 Uhr",
+        "Dienstag: 08:00–01:00 Uhr",
         "Mittwoch: 08:00–01:00 Uhr",
         "Donnerstag: 08:00–01:00 Uhr",
         "Freitag: 08:00–02:00 Uhr",
