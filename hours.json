@@ -1,5 +1,5 @@
 {
-  "updated_at": "14.08.2026, 08:14",
+  "updated_at": "15.08.2026, 07:25",
   "locations": [
     {
       "key": "lohmuehle_luebeck",
@@ -24,7 +24,7 @@
       "address": "Hinter den Kirschkaten 2, 23560 Lübeck-St. Jürgen, Deutschland",
       "phone": "+49 451 2907306",
       "status": "OPERATIONAL",
-      "open_now": true,
+      "open_now": false,
       "weekday_hours": [
         "Montag: 08:00–01:00 Uhr",
         "Dienstag: 08:00–01:00 Uhr",
@@ -41,7 +41,7 @@
       "address": "Dannauer Bruch 1, 23758 Oldenburg in Holstein-Oldenburg, Deutschland",
       "phone": "+49 4361 6239942",
       "status": "OPERATIONAL",
-      "open_now": true,
+      "open_now": false,
       "weekday_hours": [
         "Montag: 08:00–01:00 Uhr",
         "Dienstag: 08:00–01:00 Uhr",
@@ -58,7 +58,7 @@
       "address": "Eutiner Str. 57-59, 23730 Neustadt, Deutschland",
       "phone": "+49 4561 16166",
       "status": "OPERATIONAL",
-      "open_now": true,
+      "open_now": false,
       "weekday_hours": [
         "Montag: 08:00–01:00 Uhr",
         "Dienstag: 08:00–01:00 Uhr",
@@ -75,7 +75,7 @@
       "address": "Röntgenstraße 2, 23701 Eutin, Deutschland",
       "phone": "+49 4521 401899",
       "status": "OPERATIONAL",
-      "open_now": true,
+      "open_now": false,
       "weekday_hours": [
         "Montag: 08:00–00:00 Uhr",
         "Dienstag: 08:00–00:00 Uhr",
@@ -109,7 +109,7 @@
       "address": "Am Bahnhof 2, 23558 Lübeck-St. Lorenz Süd, Deutschland",
       "phone": "+49 451 2035279",
       "status": "OPERATIONAL",
-      "open_now": true,
+      "open_now": false,
       "weekday_hours": [
         "Montag: 08:00–23:00 Uhr",
         "Dienstag: 08:00–23:00 Uhr",
