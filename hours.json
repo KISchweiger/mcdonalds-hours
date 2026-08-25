@@ -1,5 +1,5 @@
 {
-  "updated_at": "24.08.2026, 07:38",
+  "updated_at": "25.08.2026, 07:32",
   "locations": [
     {
       "key": "lohmuehle_luebeck",
@@ -73,7 +73,7 @@
       "key": "eutin",
       "name": "Eutin",
       "address": "Röntgenstraße 2, 23701 Eutin, Deutschland",
-      "phone": "+49 4521 401899",
+      "phone": "+49 30 82685566",
       "status": "OPERATIONAL",
       "open_now": false,
       "weekday_hours": [
